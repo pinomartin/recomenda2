@@ -40,13 +40,14 @@ main{
     margin: 0 auto;
     background-color: #303841d2;
     border-radius: 2rem;
-    padding: 3rem;
+    padding: 2rem;
 }
-@media screen and (min-width : 768px){
+
+/* @media screen and (min-width : 768px){
     main{
-        width: 20vw;
+        
     }
-}
+} */
 
 main p{
     color: #eeeeee;
