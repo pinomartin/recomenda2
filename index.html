@@ -24,7 +24,7 @@
     <div class="contenedor">
         <main>
             <p>No sabes que ver ??</p>
-            <button type="button" class="btn btn-lg btn-login" data-toggle="modal" data-target="#modelId">
+            <button type="button" class="btn btn-lg btn-login" data-toggle="modal" data-target="#modelId" onclick="fetchMovie()">
                 Recomienda !
             </button>
 
@@ -36,7 +36,7 @@
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" id="modalHeader">
                     <h5 class="modal-title">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -46,7 +46,7 @@
                     <div class="container-fluid">
                         <div class="row justify-content-center">
                             <div class="col-6 text-center">
-                                <img src="https://image.tmdb.org/t/p/w500//d1QKiYtceF3GDtxvTFXFAqwwah9.jpg" alt="" class="img img-fluid">
+                                <img src="" alt="" class="img img-fluid" id="movieImg">
                             </div>
                         </div>
                     </div>
