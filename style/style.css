@@ -9,7 +9,6 @@ html{
 }
 body{
     font-size: 62.5%;
-    
     background-image: url(/img/background1.png);
     background-attachment: fixed;
     background-position: center;
@@ -54,6 +53,7 @@ main{
 
 main p{
     color: #eeeeee;
+    font-family: var(--font-modal-default);
 }
 
 
@@ -61,6 +61,16 @@ main p{
     background-color: #ff5722;
     color: #eeeeee;
     margin-top: 2rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-login:hover{
+    background-color: #00D0F7;
+    /* transform: rotate(360deg); */
+    -webkit-box-shadow: 10px 10px 125px -14px rgba(102,232,255,0.95);
+    -moz-box-shadow: 10px 10px 125px -14px rgba(102,232,255,0.95);
+    box-shadow: 10px 10px 125px -14px rgba(102,232,255,0.95);
+    
 }
 
 /*Estilos Modal Pop Up*/
