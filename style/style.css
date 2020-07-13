@@ -82,6 +82,10 @@ main p{
 .modal-content{
     background-color: #303841f5;
     font-family: var(--font-modal-default);
+    -webkit-box-shadow: 10px 10px 125px -14px rgba(102,232,255,0.80);
+    -moz-box-shadow: 10px 10px 125px -14px rgba(102,232,255,0.80);
+    box-shadow: 10px 10px 125px -14px rgba(102,232,255,0.80);
+    border: transparent;
 }
 
 .modal-header{

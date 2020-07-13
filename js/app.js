@@ -1,4 +1,7 @@
+/*---------------Vars */
+
 const apiKEY = '674a6ef5377de277c8d3a10076bca897';
+const btnHome = document.querySelector('.btn-login')
 const btnLike = document.getElementById('btn-like');
 const btnDisLike = document.getElementById('btn-dislike');
 
@@ -10,6 +13,9 @@ let modal = {
     sinopsis : document.getElementById('sinopsis'),
     genero: document.getElementById('genero')
 }
+
+
+/*--------------Metodos y Funciones-*/ 
 
 const fetchMovie =  async () => {
     const pageNumber = randomPage();
@@ -37,3 +43,10 @@ function randomPage(){
         page = Math.floor(Math.random() * 10) + Math.floor(Math.random() * 100); // + Math.floor(Math.random() * 1000);
     return page; 
 }
+
+
+
+/** -------------Event Listeners */
+
+btnLike.addEventListener('click',fetchMovie);
+btnDisLike.addEventListener('click',fetchMovie);

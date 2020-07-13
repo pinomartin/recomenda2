@@ -26,8 +26,7 @@
     <div class="contenedor">
         <main>
             <p class="lead">No sabes que ver ??</p>
-            <button type="button" class="btn btn-lg btn-login" data-toggle="modal" data-target="#modelId"
-                onclick="fetchMovie()">
+            <button type="button" id="btn-main" class="btn btn-lg btn-login" data-toggle="modal" data-target="#modelId" onclick="fetchMovie()">
                 Recomenda2 !
             </button>
         </main>
@@ -70,12 +69,7 @@
     </div>
 
     <script>
-        $('#exampleModal').on('show.bs.modal', event => {
-            var button = $(event.relatedTarget);
-            var modal = $(this);
-            // Use above variables to manipulate the DOM
-
-        });
+        
     </script>
     <script src="js/app.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
