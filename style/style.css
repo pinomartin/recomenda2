@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+    --font-modal-default : 'Montserrat', sans-serif;
 }
 
 body{
@@ -15,9 +15,9 @@ body{
 }
 
 .contenedor{
-    width: 50vw;
+    width: 60vw;
     margin: 0 auto;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,8 @@ main{
     margin: 0 auto;
     background-color: #303841d2;
     border-radius: 2rem;
-    padding: 2rem;
+    padding: 4rem;
+    margin-top: 4rem;
 }
 
 /* @media screen and (min-width : 768px){
@@ -60,6 +61,76 @@ main p{
     margin-top: 2rem;
 }
 
+/*Estilos Modal Pop Up*/
+
+.modal-content{
+    background-color: #303841e0;
+    height: 95vh;
+    font-family: var(--font-modal-default);
+}
+
 .modal-header{
-    height: 70vh;
+    height: 95vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0.00,  rgba(0,0,0,1)),
+    color-stop(0.35,  rgba(0,0,0,1)),
+    color-stop(0.50,  rgba(0,0,0,1)),
+    color-stop(0.65,  rgba(0,0,0,1)),
+    color-stop(0.85,  rgba(0,0,0,0.6)),
+    color-stop(1.00,  rgba(0,0,0,0)));
+}
+
+.close{
+    color: #00fafa;
+    font-size: x-large;
+    transition: all 0.3s ease-in-out;
+}
+
+.close:hover{
+    color: #ff9900;
+    transform: scale(1.2);
+}
+
+.modal-body{
+    color: #eeeeee;
+}
+.modal-footer{
+    border-color: transparent;
+}
+
+
+/*Botones Like Dislike*/
+.likes{
+    padding: 0;
+}
+
+.likes button {
+    color: #eeeeee;
+    transition: all 0.3s ease-in-out;
+    padding: 1rem 4rem;
+    border-radius: 1.5rem;
+    border-color: none;
+}
+
+#btn-like{
+    background-color: #02aa8e;  
+}
+
+#btn-like:hover{
+    background-color: #04977f;
+    transform: scale(1.1);
+    color: #eeeeee;
+}
+
+#btn-dislike{
+    background-color: #fd613e;
+}
+
+#btn-dislike:hover{
+    background-color: #b6462d;
+    color: #eeeeee;
+    transform: scale(1.1);
 }

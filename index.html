@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <title>Recomenda2</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -23,11 +25,11 @@
 
     <div class="contenedor">
         <main>
-            <p>No sabes que ver ??</p>
-            <button type="button" class="btn btn-lg btn-login" data-toggle="modal" data-target="#modelId" onclick="fetchMovie()">
+            <p class="lead">No sabes que ver ??</p>
+            <button type="button" class="btn btn-lg btn-login" data-toggle="modal" data-target="#modelId"
+                onclick="fetchMovie()">
                 Recomienda !
             </button>
-
         </main>
     </div>
     <!-- Button trigger modal -->
@@ -37,26 +39,34 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header" id="modalHeader">
-                    <h5 class="modal-title">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <div class="row justify-content-center">
-                            <div class="col-6 text-center">
-                                <img src="" alt="" class="img img-fluid" id="movieImg">
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h3 id="titulo-card">Titulo Pelicula</h3>
+                                <p id="titulo-original">Titulo Original</p>
+                                <p id="sinopsis">Sinopsis</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer justify-content-center">
-                    <button id="btn-like" type="button" class="btn btn-success"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
-                    <button id="btn-dislike" type="button" class="btn btn-danger"><i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                <div class="modal-footer justify-content-center likes">
+                    <div class="col-6 text-center">
+                        <button id="btn-like" type="button" class="btn btn-lg"><i class="fa fa-thumbs-up"
+                                aria-hidden="true"></i></button>
+                    </div>
+                    <div class="col-6 text-center">
+                        <button id="btn-dislike" type="button" class="btn btn-lg">
+                            <i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
