@@ -63,18 +63,17 @@ main p{
 
 /*Estilos Modal Pop Up*/
 .modal-dialog{
-    height: 100vh;
+    height: 100vh!important;
 }
 
 
 .modal-content{
-    background-color: #303841e0;
-    height: 95vh;
+    background-color: #303841f5;
     font-family: var(--font-modal-default);
 }
 
 .modal-header{
-    height: 95vh;
+    height: 550px!important;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
