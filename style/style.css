@@ -110,7 +110,7 @@ main p{
 .likes button {
     color: #eeeeee;
     transition: all 0.3s ease-in-out;
-    padding: 1rem 4rem;
+    padding: 1rem 3rem;
     border-radius: 1.5rem;
     border-color: none;
 }
