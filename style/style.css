@@ -73,7 +73,7 @@ main p{
 }
 
 .modal-header{
-    height: 550px!important;
+    height: 50vh!important;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -102,6 +102,7 @@ main p{
 }
 .modal-footer{
     border-color: transparent;
+   
 }
 
 
