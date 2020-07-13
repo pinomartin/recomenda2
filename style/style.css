@@ -15,7 +15,7 @@ body{
 }
 
 .contenedor{
-    width: 60vw;
+    width: 70vw;
     margin: 0 auto;
     height: 60vh;
     display: flex;
@@ -36,11 +36,12 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 60vh;
     margin: 0 auto;
     background-color: #303841d2;
     border-radius: 2rem;
-    padding: 2rem;
+    padding: 1rem;
+    width: 350px;
 }
 
 /* @media screen and (min-width : 768px){
@@ -104,6 +105,7 @@ main p{
 /*Botones Like Dislike*/
 .likes{
     padding: 0;
+    margin-bottom: 1rem;
 }
 
 .likes button {
