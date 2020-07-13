@@ -7,7 +7,8 @@ let modal = {
     tituloModal : document.getElementById('titulo-card'),
     nombreOriginal : document.getElementById('titulo-original'),
     descripGral : document.getElementById('desc-gral'),
-    sinopsis : document.getElementById('sinopsis')
+    sinopsis : document.getElementById('sinopsis'),
+    genero: document.getElementById('genero')
 }
 
 const fetchMovie =  async () => {
@@ -24,7 +25,7 @@ const fetchMovie =  async () => {
     modal.tituloModal.innerText = randomMovie.title;
     modal.nombreOriginal.innerText = `${randomMovie.original_title}`;
     modal.sinopsis.innerText = `${randomMovie.overview.substring(0,280)}...`
-
+    modal.genero.innerText = `${randomMovie}`
 
     //Asigna esa imagen a los elementos para visualizar
     document.getElementById("modalHeader").style.backgroundImage = `url(${imgUrl})`;
