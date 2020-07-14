@@ -14,34 +14,24 @@ firebase.initializeApp(firebaseConfig);
 var firestore = firebase.firestore();
 
 //Configuracion para trackear la actividad de la app
-const docRef = firestore.doc("logs/app-activity");
+const docRef = firestore.collection("logs")
 const likeBtn = document.querySelector('#btn-like');
 const dislikeBtn = document.querySelector('#btn-dislike');
 const movieTitle = document.querySelector('#titulo-card');
 
 //Log de acciones en los botones de like o dislike
 likeBtn.addEventListener("click", function() {
-    const textToSave = movieTitle.innerText;
-    console.log("Texto a guardar: " + textToSave);
-    docRef.set({
-        movieTitle: textToSave,
+    var docData = {
+        movie: movieTitle.innerText,
         like: true
-    }).then(function() {
-        console.log("Log guardado");
-    }).catch(function() {
-        console.log("Error");
-    });
+    };
+    docRef.add(docData)
 })
 
 dislikeBtn.addEventListener("click", function() {
-    const textToSave = movieTitle.innerText;
-    console.log("Texto a guardar: " + textToSave);
-    docRef.set({
-        movieTitle: textToSave,
+    var docData = {
+        movie: movieTitle.innerText,
         like: false
-    }).then(function() {
-        console.log("Log guardado");
-    }).catch(function() {
-        console.log("Error");
-    });
+    };
+    docRef.add(docData)
 })
