@@ -27,18 +27,14 @@ const fetchMovie =  async () => {
         randomMovie = results[Math.floor(Math.random() * results.length)];
     } while (randomMovie.poster_path == null);
     const imgUrl = `https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`;
+    //Obtención de los géneros de la película
     const {genre_ids} = randomMovie;
-    //Llamada a fetchGenre,**************
-    console.log(genre_ids);
-    const  generoMovie = fetchGenre(genre_ids);
-    generoMovie.then(response => console.log(response))
-    
-    console.log(generoMovie)
-    console.log(randomMovie)
+    const generoMovie = await fetchGenre(genre_ids);
+
     modal.tituloModal.innerText = randomMovie.title;
     modal.nombreOriginal.innerText = `${randomMovie.original_title}`;
     modal.sinopsis.innerText = `${randomMovie.overview.substring(0,280)}...`
-    modal.genero.innerText = `${randomMovie}`
+    modal.genero.innerText = `${generoMovie}`
 
     //Asigna esa imagen a los elementos para visualizar
     document.getElementById("modalHeader").style.backgroundImage = `url(${imgUrl})`;
@@ -51,13 +47,18 @@ function randomPage(){
     return page; 
 }
 
-/* Debe recibir un array */
-const fetchGenre = async (genre1) => {
+const fetchGenre = async (genreIds) => {
     const request = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKEY}&language=es-ES`)
     const response = await request.json();
     /*genres es el array de Generos (19 en total) */
     const {genres} = response;
-    const generos = genres.filter(genre => genre.id === genre1);
+    var generos = [];
+    // Por cada elemento del array recibido por parámetro filtra el nombre en la respuesta de la llamada a la API
+    genreIds.forEach(element => {
+        genero = genres.filter(genre => genre.id === element)
+        generos.push(genero[0].name);
+    });
+    generos = generos.join(", ")
     return generos;
 }
 
