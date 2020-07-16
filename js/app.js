@@ -11,7 +11,8 @@ let modal = {
     nombreOriginal : document.getElementById('titulo-original'),
     descripGral : document.getElementById('desc-gral'),
     sinopsis : document.getElementById('sinopsis'),
-    genero: document.getElementById('genero')
+    genero: document.getElementById('genero'),
+    
 }
 
 
@@ -33,8 +34,9 @@ const fetchMovie =  async () => {
 
     modal.tituloModal.innerText = randomMovie.title;
     modal.nombreOriginal.innerText = `${randomMovie.original_title}`;
-    modal.sinopsis.innerText = `${randomMovie.overview.substring(0,280)}...`
-    modal.genero.innerText = `${generoMovie}`
+    modal.sinopsis.innerHTML = sinopsisReducer(randomMovie.overview);
+    // modal.genero.innerText = `${generoMovie}`
+    
 
     //Asigna esa imagen a los elementos para visualizar
     document.getElementById("modalHeader").style.backgroundImage = `url(${imgUrl})`;
@@ -58,10 +60,37 @@ const fetchGenre = async (genreIds) => {
         genero = genres.filter(genre => genre.id === element)
         generos.push(genero[0].name);
     });
+
+    //Limpia los campos e inserta generos al Html
+    modal.genero.innerHTML ='';
+
+    generos.forEach(e => {
+        modal.genero.innerHTML += `
+        <span class="badge badge-pill">${e}</span>
+        
+        `
+    })
     generos = generos.join(", ")
     return generos;
 }
 
+//Valida la longitud de la sinopsis (si supera valor agrega boton Ver mas)
+const sinopsisReducer = (apiSinopsis) => {
+    let caracteres = apiSinopsis.length;
+    let html = '';
+    if(caracteres > 200){
+        html = `${apiSinopsis.substring(0,200)}.. <button onclick="sinopsisFullShow()" class='leer-mas'>Ver Mas</button>`
+        
+    }else{
+        html = `${apiSinopsis}`
+    }
+    return html
+}
+
+//Accion del boton inyectado en funcion sinopsisReducer()
+const sinopsisFullShow = () => {
+    modal.sinopsis.innerHTML = `${randomMovie.overview}`;
+}
 
 
 /** -------------Event Listeners */

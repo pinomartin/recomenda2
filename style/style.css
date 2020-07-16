@@ -117,9 +117,25 @@ main p{
     color: #eeeeee;
 }
 
+.badge{
+    font-size: 0.7rem;
+    background-color: rgba(102,232,255,0.80);
+    color: #000000;
+}
 .sinopsis{
     line-height: 1.2rem;
     font-size: .7rem;
+}
+
+.leer-mas{
+    background-color: transparent;
+    border: transparent;
+    color: #00D0F7;
+    transition: all 0.2s ease-in-out;
+}
+
+.leer-mas:hover{
+    color: #6be6ff;
 }
 
 
@@ -160,7 +176,7 @@ main p{
 }
 
 #btn-dislike:hover{
-    background-color: #b6462d;
+    background-color: #d15235;
     color: #eeeeee;
     transform: scale(1.1);
 }
