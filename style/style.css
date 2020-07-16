@@ -41,7 +41,7 @@ main{
     margin: 0 auto;
     background-color: #303841d2;
     border-radius: 2rem;
-    padding: 1rem;
+    /* padding: 1rem; */
     width: 350px;
 }
 
@@ -116,11 +116,13 @@ main p{
 .modal-body{
     color: #eeeeee;
 }
-
+/* Pills Generos*/
 .badge{
     font-size: 0.7rem;
     background-color: rgba(102,232,255,0.80);
     color: #000000;
+    margin-right: 0.3rem;
+    margin-top: 0.3rem;
 }
 .sinopsis{
     line-height: 1.2rem;
