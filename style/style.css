@@ -18,19 +18,19 @@ body{
 .contenedor{
     width: 70vw;
     margin: 0 auto;
-    height: 60vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header{
+/* header{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 20vh;
     color: white;
-}
+} */
 
 main{
     display: flex;
@@ -54,6 +54,11 @@ main{
 main p{
     color: #eeeeee;
     font-family: var(--font-modal-default);
+}
+
+h2{
+    color: #ffffff;
+    padding: 2rem;
 }
 
 
@@ -116,7 +121,13 @@ main p{
 .modal-body{
     color: #eeeeee;
 }
-/* Pills Generos*/
+
+#titulo-original{
+     font-size: small;
+     font-weight: 200;
+     font-style: italic;
+}
+
 .badge{
     font-size: 0.7rem;
     background-color: rgba(102,232,255,0.80);
@@ -182,3 +193,5 @@ main p{
     color: #eeeeee;
     transform: scale(1.1);
 }
+
+
