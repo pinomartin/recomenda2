@@ -5,16 +5,16 @@
     <title>Recomenda2</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400;1,500&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -34,8 +34,14 @@
             <div class="row">
                 <div class="col-12 justify-content-center text-center">
                     <p class="lead">No sabes que ver ??</p>
-                    <button type="button" id="btn-main" class="btn btn-lg btn-login" data-toggle="modal" data-target="#modelId" onclick="fetchMovie()">
+                    <button type="button" id="btn-main" class="btn btn-lg btn-login" data-toggle="modal"
+                        data-target="#modelId" onclick="fetchMovie()">
                         Recomenda2 !
+                    </button>
+                    <br>
+                    <button type="button" id="btn-main" class="btn btn-lg btn-login" data-toggle="modal"
+                        data-target="#loginModal">
+                        Iniciar Sesion
                     </button>
                 </div>
             </div>
@@ -77,37 +83,42 @@
             </div>
         </div>
     </div>
+
     <!-- Modal Login -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" id="modalLoginHeader">
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-form">
+                <div class="modal-header text-center" id="modalLoginHeader">
+                    <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel">
+                        <strong>INICIAR</strong> <a class="green-text font-weight-bold"><strong>SESION</strong></a></h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 text-left">
-                                <h3 id="titulo-card">Titulo Pelicula</h3>
-                                <p id="titulo-original">Titulo Original</p>
-                                <p id="genero"></p>
-                                <p id="sinopsis" class="m-0 sinopsis">Sinopsis</p>
-                            </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <p>Accede con tu cuenta y disfruta una experiencia personalizada.</p>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer justify-content-around likes">
-                    <button id="btn-like" type="button" class="btn btn-lg"><i class="fa fa-thumbs-up"
-                            aria-hidden="true"></i></button>
+                    <div class="md-form mb-3">
+                        <label data-error="wrong" data-success="right" for="email-input">Email</label>
+                        <input type="email" id="email-input" class="form-control bg-dark text-white">
+                    </div>
 
-                    <button id="btn-dislike" type="button" class="btn btn-lg">
-                        <i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                    <div class="md-form pb-3">
+                        <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
+                        <input type="password" id="pass-input" class="form-control bg-dark text-white">
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <!--Grid column-->
+                        <div class="text-center mb-3 col-md-12">
+                            <button type="button" class="btn btn-login">Comenza la experiencia</button>
+                        </div>
+                        <!--Grid column-->
+                    </div>
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div> -->
             </div>
         </div>
     </div>
@@ -126,6 +137,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

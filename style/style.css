@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     --font-modal-default : 'Montserrat', sans-serif;
-    --font-logo: 'Bangers', cursive;
     --font-logo-alt : 'Unica One', cursive ;
 }
 html{
@@ -39,7 +38,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 450px;
     margin: 0 auto;
     background-color: #303841d2;
     border-radius: 2rem;
@@ -47,11 +46,11 @@ main{
     width: 350px;
 }
 
-/* @media screen and (min-width : 768px){
+@media screen and (min-width : 768px){
     main{
-        
+        height: 60vh;
     }
-} */
+}
 
 
 
@@ -93,11 +92,10 @@ main p{
     
 }
 
-/*Estilos Modal Pop Up*/
+/*Estilos Modal Peliculas */
 .modal-dialog{
     height: 100vh!important;
 }
-
 
 .modal-content{
     background-color: #303841f5;
@@ -209,4 +207,41 @@ main p{
     transform: scale(1.1);
 }
 
+/*Fin Estilos Modal Peliculas*/
+
+/*Modal Login*/
+.modal-form{
+    height: 450px;
+}
+
+.modal-form .modal-header{
+    height: 100px!important;
+}
+
+.modal-form .modal-header h3{
+    color: #ffffff;
+}
+
+.modal-form .close{
+    padding: 0.5em;
+}
+
+.modal-form .modal-body{
+    margin-top: 1rem;
+}
+
+.modal-form input{
+    color: #00fafa!important;
+}
+
+.modal-form input:focus{
+    border-color: #00D0F7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #00D0F7;
+    outline: 0 none;
+    color: aqua;
+}
+
+.modal-form .modal-body button{
+    margin-top: 2rem;
+}
 
