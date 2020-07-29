@@ -28,7 +28,7 @@
         <main class="justify-content-center">
             <div class="row">
                 <div class="col-12">
-                    <h2>R e c o m e n d a 2</h2>
+                    <h2>Recomenda 2</h2>
                 </div>
             </div>
             <div class="row">
@@ -48,6 +48,40 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header" id="modalHeader">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h3 id="titulo-card">Titulo Pelicula</h3>
+                                <p id="titulo-original">Titulo Original</p>
+                                <p id="genero"></p>
+                                <p id="sinopsis" class="m-0 sinopsis">Sinopsis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-around likes">
+                    <button id="btn-like" type="button" class="btn btn-lg"><i class="fa fa-thumbs-up"
+                            aria-hidden="true"></i></button>
+
+                    <button id="btn-dislike" type="button" class="btn btn-lg">
+                        <i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Modal Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" id="modalLoginHeader">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
