@@ -207,31 +207,35 @@ main p{
     transform: scale(1.1);
 }
 
-/*Fin Estilos Modal Peliculas*/
+/*--------Fin Estilos Modal Peliculas---------------*/
 
 /*Modal Login*/
 .modal-form{
-    height: 450px;
+    height: 500px;
 }
 
 .modal-form .modal-header{
-    height: 100px!important;
+    padding: 0;
+    border-bottom: transparent;
 }
 
-.modal-form .modal-header h3{
-    color: #ffffff;
-}
 
 .modal-form .close{
-    padding: 0.5em;
+    padding: 1em 1em 0 0;
 }
 
 .modal-form .modal-body{
-    margin-top: 1rem;
+    margin: 0;
+    padding-top: 0;
+    font-size:medium;
+}
+
+.modal-form h3{
+    padding-bottom: 0.5em;
 }
 
 .modal-form input{
-    color: #00fafa!important;
+    color: #00EDC2!important;
 }
 
 .modal-form input:focus{
@@ -242,6 +246,16 @@ main p{
 }
 
 .modal-form .modal-body button{
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
+.modal-form .modal-body .btn-registro{
+    background-color: transparent;
+    border: 0.5px solid;
+    border-color: #00D0F7
+    
+}
+
+.modal-form .modal-body .btn-registro:hover{
+    color: #00EDC2;
+}

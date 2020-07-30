@@ -14,7 +14,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
+    <!--Custom CSS-->    
     <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -90,8 +90,6 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-form">
                 <div class="modal-header text-center" id="modalLoginHeader">
-                    <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel">
-                        <strong>INICIAR</strong> <a class="green-text font-weight-bold"><strong>SESION</strong></a></h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -99,6 +97,8 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col text-center">
+                            <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel">
+                                <strong>INICIAR</strong> <a class="green-text font-weight-bold"><strong>SESION</strong></a></h3>
                             <p>Accede con tu cuenta y disfruta una experiencia personalizada.</p>
                         </div>
                     </div>
@@ -111,12 +111,19 @@
                         <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
                         <input type="password" id="pass-input" class="form-control bg-dark text-white">
                     </div>
-                    <div class="row d-flex align-items-center mb-4">
+                    <div class="row d-flex align-items-center">
                         <!--Grid column-->
                         <div class="text-center mb-3 col-md-12">
-                            <button type="button" class="btn btn-login">Comenza la experiencia</button>
+                            <button type="button" id="btn-login" class="btn btn-login d-none">Ingresar</button>
+                            <button type="button" id="btn-reg-usuario" class="btn btn-login">Comenza la experiencia</button>
                         </div>
                         <!--Grid column-->
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <p class="small p-0 m-0 ">Forma parte de la comunidad</p>
+                            <button type="button" id="btn-acceso-reg" class="btn btn-login btn-registro">Registrate</button>
+                        </div>
                     </div>
                 </div>
             </div>
