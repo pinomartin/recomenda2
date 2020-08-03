@@ -5,21 +5,19 @@
     --font-modal-default : 'Montserrat', sans-serif;
     --font-logo-alt : 'Unica One', cursive ;
 }
-html{
-    height: 100vh;
-}
 body{
     font-size: 62.5%;
     background-image: url(/img/background1.png);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    height: 100vh;
 }
 
 .contenedor{
     width: 70vw;
     margin: 0 auto;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,6 +30,9 @@ body{
     height: 20vh;
     color: white;
 } */
+
+
+
 
 main{
     display: flex;
@@ -76,14 +77,14 @@ main p{
 }
 
 
-.btn-login{
+.btn-main{
     background-color: #ff5722;
     color: #eeeeee;
     margin-top: 2rem;
     transition: all 0.4s ease-in-out;
 }
 
-.btn-login:hover{
+.btn-main:hover{
     background-color: #00D0F7;
     /* transform: rotate(360deg); */
     -webkit-box-shadow: 10px 10px 125px -14px rgba(102,232,255,0.95);
@@ -215,6 +216,7 @@ main p{
 }
 
 .modal-form .modal-header{
+    height: 40px!important;
     padding: 0;
     border-bottom: transparent;
 }
@@ -238,15 +240,20 @@ main p{
     color: #00EDC2!important;
 }
 
-.modal-form input:focus{
+.modal-form input:focus, .modal-form input:-webkit-autofill,
+.modal-form input:-webkit-autofill:hover, 
+.modal-form input:-webkit-autofill:focus{
     border-color: #00D0F7;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #00D0F7;
     outline: 0 none;
     color: aqua;
+    -webkit-text-fill-color: aqua;
+    -webkit-box-shadow: 0 0 0px 1000px #303841 inset, 0 0 8px #00D0F7;
+    /* transition: all 5000ms ease-in-out ; */
 }
 
+
 .modal-form .modal-body button{
-    margin-top: 1rem;
+    margin-top: 0.8rem;
 }
 
 .modal-form .modal-body .btn-registro{

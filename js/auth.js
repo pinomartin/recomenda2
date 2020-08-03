@@ -2,27 +2,50 @@
 
 const auth = firebase.auth();
 
+
 //Auth status changes listener
 auth.onAuthStateChanged(user => {
-    if(user)
+    if(user){
+
         console.log("Usuario activo: " + user.email)
+        
+    }
     else
-        console.log("Usuario deslogueado")
+            console.log("Usuario deslogueado")
 })
 
 //User registration
 const emailInput = document.querySelector('#email-input');
 const passInput = document.querySelector('#pass-input');
-const btnRegister = document.querySelector('#btn-reg-usuario');
+const userNameInput = document.querySelector('#displayName-input');
+const btnCreateUser = document.querySelector('#btn-reg-usuario');
 
-btnRegister.addEventListener('click', (e) => {
+
+btnCreateUser.addEventListener('click', (e) => {
     const email = emailInput.value;
     const password = passInput.value;
-    
+    const userName = userNameInput.value;
+
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        //console.log(cred)
+        
         $("#loginModal .close").click()
     });
+
+     //Setea displayName
+    auth.onAuthStateChanged(user => {
+        if(user){
+         user.updateProfile({
+            displayName : userName
+            }).then(() => {
+            console.log('Display Name actualizado')
+         }).catch( (e) => console.log(e))
+        
+    }
+    else
+            console.log("Usuario deslogueado")
+})
+
+    
 })
 
 //User login
@@ -45,3 +68,7 @@ btnLogout.addEventListener('click', (e) => {
         //console.log('Usuario deslogeado')
     })
 })
+
+
+export default auth;
+
