@@ -1,4 +1,7 @@
 // USER LOGIN AND REGISTRATION
+import {createUserBtnAction,userLoggedIn,userLoggedOut} from './ui-login.js';
+
+
 
 const auth = firebase.auth();
 
@@ -7,8 +10,8 @@ const auth = firebase.auth();
 auth.onAuthStateChanged(user => {
     if(user){
 
+        userLoggedIn(user.displayName);
         console.log("Usuario activo: " + user.email)
-        
     }
     else
             console.log("Usuario deslogueado")
@@ -22,6 +25,7 @@ const btnCreateUser = document.querySelector('#btn-reg-usuario');
 
 
 btnCreateUser.addEventListener('click', (e) => {
+    e.preventDefault();
     const email = emailInput.value;
     const password = passInput.value;
     const userName = userNameInput.value;
@@ -29,6 +33,7 @@ btnCreateUser.addEventListener('click', (e) => {
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
         
         $("#loginModal .close").click()
+        
     });
 
      //Setea displayName
@@ -37,12 +42,16 @@ btnCreateUser.addEventListener('click', (e) => {
          user.updateProfile({
             displayName : userName
             }).then(() => {
-            console.log('Display Name actualizado')
+            //Llamado a Funciones UI
+            createUserBtnAction();
+            userLoggedIn(user.displayName);
+            
          }).catch( (e) => console.log(e))
         
     }
     else
             console.log("Usuario deslogueado")
+            
 })
 
     
@@ -51,6 +60,7 @@ btnCreateUser.addEventListener('click', (e) => {
 //User login
 const btnLogin = document.querySelector('#btn-login');
 
+
 btnLogin.addEventListener('click', (e) => {
     const email = emailInput.value;
     const password = passInput.value;
@@ -58,6 +68,7 @@ btnLogin.addEventListener('click', (e) => {
     auth.signInWithEmailAndPassword(email, password).then(cred => {
         //console.log(cred)
         $("#loginModal .close").click()
+        
     });
 })
 
@@ -65,6 +76,7 @@ btnLogin.addEventListener('click', (e) => {
 const btnLogout = document.querySelector('#btn-logout');
 btnLogout.addEventListener('click', (e) => {
     auth.signOut().then(() => {
+        userLoggedOut();
         //console.log('Usuario deslogeado')
     })
 })

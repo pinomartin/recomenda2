@@ -33,10 +33,9 @@
                         data-target="#loginModal">
                         Iniciar Sesion
                     </button>
-                    <span class="navbar-text text-white mr-2">
-                        Navbar text with an inline element
+                    <span id="display-username" class="navbar-text lead text-white mr-3  d-none">
                       </span>
-                    <button type="button" id="btn-logout" class="btn btn-sm btn-outline-secondary">Salir</button>
+                    <button type="button" id="btn-logout" class="btn btn-sm btn-outline-warning d-none">Salir</button>
                   </form>
             </div>
           </nav>
@@ -119,29 +118,33 @@
                                 personalizada.</p>
                         </div>
                     </div>
-                    <div id="user-input" class="d-none">
+                    <form id="form-login">
+
+                        <div id="user-input" class="d-none">
+                            <div class="md-form mb-2">
+                                <label data-error="wrong" data-success="right" for="displayName-input">Nombre</label>
+                                <input type="text" id="displayName-input" required autocomplete="username" class="form-control bg-dark text-white">
+                            </div>
+                        </div>
                         <div class="md-form mb-2">
-                            <label data-error="wrong" data-success="right" for="displayName-input">Nombre</label>
-                            <input type="text" id="displayName-input" class="form-control bg-dark text-white">
+                            <label data-error="wrong" data-success="right" for="email-input">Email</label>
+                            <input type="email" id="email-input" required autocomplete='email' class="form-control bg-dark text-white">
                         </div>
-                    </div>
-                    <div class="md-form mb-2">
-                        <label data-error="wrong" data-success="right" for="email-input">Email</label>
-                        <input type="email" id="email-input" class="form-control bg-dark text-white">
-                    </div>
-                    <div class="md-form">
-                        <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
-                        <input type="password" id="pass-input" class="form-control bg-dark text-white">
-                    </div>
-                    <div class="row d-flex align-items-center">
-                        <!--Grid column-->
-                        <div class="text-center mb-3 col-md-12">
-                            <button type="button" id="btn-login" class="btn btn-main">Ingresar</button>
-                            <button type="button" id="btn-reg-usuario" class="btn btn-main d-none">Comenza la
-                                experiencia</button>
+                        <div class="md-form">
+                            <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
+                            <input type="password" id="pass-input" required autocomplete='current-password' class="form-control bg-dark text-white">
                         </div>
-                        <!--Grid column-->
-                    </div>
+                        <div class="row d-flex align-items-center">
+                            <!--Grid column-->
+                            <div class="text-center mb-3 col-md-12">
+                                <button type="submit" id="btn-login" class="btn btn-main">Ingresar</button>
+                                <button type="submit" id="btn-reg-usuario" class="btn btn-main d-none">Comenza la
+                                    experiencia</button>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+
+                    </form>
                     <div id="ui-SignUp" class="row">
                         <div class="col-12 text-right">
                             <p class="small p-0 m-0 ">Forma parte de la comunidad</p>
