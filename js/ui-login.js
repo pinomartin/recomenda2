@@ -36,9 +36,12 @@ const signUpBtnAction = () => {
     modalLogin.modalTitleRegisterUI.classList.remove('d-none');
     modalLogin.modalDescriptionRegisterUI.classList.remove('d-none');
     modalLogin.btnCreateUserUI.classList.remove('d-none');
+    modalLogin.btnCreateUserUI.disabled = false;
     modalLogin.signUpCallUI.classList.add('d-none');
     modalLogin.btnSignInUI.classList.add('d-none');
+    modalLogin.btnSignInUI.disabled = true;
     modalLogin.usernameInputFormUI.classList.remove('d-none');
+    createUserBtnAction();
 }
 
 //Enable Login Mode in Modal
@@ -48,8 +51,10 @@ const resetModalLogin = () => {
     modalLogin.modalTitleRegisterUI.classList.add('d-none');
     modalLogin.modalDescriptionRegisterUI.classList.add('d-none');
     modalLogin.btnCreateUserUI.classList.add('d-none');
+    modalLogin.btnCreateUserUI.disabled = true;
     modalLogin.signUpCallUI.classList.remove('d-none');
     modalLogin.btnSignInUI.classList.remove('d-none');
+    modalLogin.btnSignInUI.disabled = false;
     modalLogin.usernameInputFormUI.classList.add('d-none');
 }
 
