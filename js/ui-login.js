@@ -1,5 +1,3 @@
-import AuthData from './auth.js';
-
 /**Inicializacion de Objetos DOM */
 
 export const modalLogin = {
@@ -9,15 +7,23 @@ export const modalLogin = {
     btnSignInUI : document.querySelector('#btn-login'),
     
     btnCreateUserUI : document.querySelector('#btn-reg-usuario'),
-    //Form ** Inputs
+    //**Forms 
     formLoginUI : document.querySelector('#form-login'),
+    formRegisterUI : document.querySelector('#form-registro'),
+    //** Inputs
+    emailLoginFormUI : document.querySelector('#email-login'),
+    passwordLoginFormUI : document.querySelector('#pass-login'),
+    
     usernameInputFormUI : document.querySelector('#user-input'),
-    emailInputFormUI : document.querySelector('#email-input'),
-    passwordInputFormUI : document.querySelector('#email-input'),
+    displayNameInputFormUI : document.querySelector('#displayName-input'),
+    emailSignUpInputFormUI : document.querySelector('#email-sign-up'),
+    passwordSignUpInputFormUI : document.querySelector('#pass-sign-up'),
+
     //Display
     signUpCallUI : document.querySelector('#ui-SignUp'),
     modalTitleLoginUI : document.querySelector('#modal-title-login'),
     modalDescriptionLoginUI : document.querySelector('#modal-description-login'),
+
     modalTitleRegisterUI : document.querySelector('#modal-title-registro'),
     modalDescriptionRegisterUI : document.querySelector('#modal-description-registro')
 }
@@ -35,12 +41,16 @@ const signUpBtnAction = () => {
     modalLogin.modalDescriptionLoginUI.classList.add('d-none');
     modalLogin.modalTitleRegisterUI.classList.remove('d-none');
     modalLogin.modalDescriptionRegisterUI.classList.remove('d-none');
-    modalLogin.btnCreateUserUI.classList.remove('d-none');
+    // modalLogin.btnCreateUserUI.classList.remove('d-none');
     modalLogin.btnCreateUserUI.disabled = false;
     modalLogin.signUpCallUI.classList.add('d-none');
-    modalLogin.btnSignInUI.classList.add('d-none');
-    modalLogin.btnSignInUI.disabled = true;
+    // modalLogin.btnSignInUI.classList.add('d-none');
+    modalLogin.formLoginUI.classList.add('d-none');
+    
     modalLogin.usernameInputFormUI.classList.remove('d-none');
+    
+    modalLogin.btnSignInUI.disabled = true;
+
     createUserBtnAction();
 }
 
@@ -50,17 +60,22 @@ const resetModalLogin = () => {
     modalLogin.modalDescriptionLoginUI.classList.remove('d-none');
     modalLogin.modalTitleRegisterUI.classList.add('d-none');
     modalLogin.modalDescriptionRegisterUI.classList.add('d-none');
-    modalLogin.btnCreateUserUI.classList.add('d-none');
+    // modalLogin.btnCreateUserUI.classList.add('d-none');
     modalLogin.btnCreateUserUI.disabled = true;
     modalLogin.signUpCallUI.classList.remove('d-none');
-    modalLogin.btnSignInUI.classList.remove('d-none');
+    // modalLogin.btnSignInUI.classList.remove('d-none');
     modalLogin.btnSignInUI.disabled = false;
     modalLogin.usernameInputFormUI.classList.add('d-none');
+    
+    modalLogin.formLoginUI.classList.remove('d-none');
+    modalLogin.formRegisterUI.classList.add('d-none')
 }
 
 //Reset Form 
 export const createUserBtnAction = () => {
    modalLogin.formLoginUI.reset();
+   modalLogin.formLoginUI.classList.add('d-none')
+   modalLogin.formRegisterUI.classList.remove('d-none')
 }
 
 

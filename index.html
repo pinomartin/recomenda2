@@ -119,7 +119,25 @@
                         </div>
                     </div>
                     <form id="form-login">
+                        <div class="md-form mb-2">
+                            <label data-error="wrong" data-success="right" for="email-input">Email</label>
+                            <input type="email" id="email-login" required autocomplete='email' class="form-control bg-dark text-white">
+                        </div>
+                        <div class="md-form">
+                            <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
+                            <input type="password" id="pass-login" required autocomplete='current-password' class="form-control bg-dark text-white">
+                        </div>
+                        <div class="row d-flex align-items-center">
+                            <!--Grid column-->
+                            <div class="text-center mb-3 col-md-12">
+                                <button type="submit" id="btn-login" class="btn btn-main">Ingresar</button>
+                            </div>
+                            <!--Grid column-->
+                        </div>
 
+                    </form>
+
+                    <form id="form-registro" class="d-none">
                         <div id="user-input" class="d-none">
                             <div class="md-form mb-2">
                                 <label data-error="wrong" data-success="right" for="displayName-input">Nombre</label>
@@ -128,23 +146,23 @@
                         </div>
                         <div class="md-form mb-2">
                             <label data-error="wrong" data-success="right" for="email-input">Email</label>
-                            <input type="email" id="email-input" required autocomplete='email' class="form-control bg-dark text-white">
+                            <input type="email" id="email-sign-up" required autocomplete='email' class="form-control bg-dark text-white">
                         </div>
                         <div class="md-form">
                             <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
-                            <input type="password" id="pass-input" required autocomplete='current-password' class="form-control bg-dark text-white">
+                            <input type="password" id="pass-sign-up" required autocomplete='current-password' class="form-control bg-dark text-white">
                         </div>
                         <div class="row d-flex align-items-center">
                             <!--Grid column-->
                             <div class="text-center mb-3 col-md-12">
-                                <button type="submit" id="btn-login" class="btn btn-main">Ingresar</button>
-                                <button type="submit" id="btn-reg-usuario" class="btn btn-main d-none">Comenza la
+                                <button type="submit" id="btn-reg-usuario" class="btn btn-main">Comenza la
                                     experiencia</button>
                             </div>
                             <!--Grid column-->
                         </div>
 
                     </form>
+
                     <div id="ui-SignUp" class="row">
                         <div class="col-12 text-right">
                             <p class="small p-0 m-0 ">Forma parte de la comunidad</p>
@@ -161,9 +179,30 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/db.js"></script>
+    <script>
+            var firebaseConfig = {
+            apiKey: "AIzaSyBR72PdC_F2NJDy9EwHdUMz-2Ni--AHLE8",
+            authDomain: "dev-r2-5c2d1.firebaseapp.com",
+            databaseURL: "https://dev-r2-5c2d1.firebaseio.com",
+            projectId: "dev-r2-5c2d1",
+            storageBucket: "dev-r2-5c2d1.appspot.com",
+            messagingSenderId: "571673184403",
+            appId: "1:571673184403:web:6b824533633b4f6dbda566"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+           
+            // referencia auth y firestore
+            const auth = firebase.auth();
+            const database = firebase.firestore();
+    </script>
+
+
+
     <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/db.js"></script>
+    <script src="js/app.js"></script>
     <script type="module" src="js/ui-login.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
