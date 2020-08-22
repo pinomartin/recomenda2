@@ -2,6 +2,7 @@
 
 const apiKEY = '674a6ef5377de277c8d3a10076bca897';
 const btnHome = document.querySelector('.btn-login')
+const btnMain = document.getElementById('btn-main');
 const btnLike = document.getElementById('btn-like');
 const btnDisLike = document.getElementById('btn-dislike');
 
@@ -12,7 +13,7 @@ let modal = {
     descripGral : document.getElementById('desc-gral'),
     sinopsis : document.getElementById('sinopsis'),
     genero: document.getElementById('genero'),
-    
+    idioma: document.getElementById('icono-idioma')
 }
 
 
@@ -31,6 +32,8 @@ const fetchMovie =  async () => {
         console.log(movie)
     } while (randomMovie.poster_path == null);
     const imgUrl = `https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`;
+    const original_lang = randomMovie.original_language;
+    modal.idioma.src = `./img/flags/${original_lang}.png`;
     //Obtención de los géneros de la película
     const {genre_ids} = randomMovie;
     const generoMovie = await fetchGenre(genre_ids);
@@ -98,6 +101,7 @@ const sinopsisFullShow = () => {
 
 /** -------------Event Listeners */
 
+btnMain.addEventListener('click',fetchMovie);
 btnLike.addEventListener('click',fetchMovie);
 btnDisLike.addEventListener('click',fetchMovie);
 
