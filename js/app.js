@@ -17,6 +17,7 @@ let modal = {
 
 
 /*--------------Metodos y Funciones-*/ 
+var movie = null;
 
 const fetchMovie =  async () => {
     const pageNumber = randomPage();
@@ -26,6 +27,8 @@ const fetchMovie =  async () => {
     do {        
         //Obtiene una película random del array de resultados
         randomMovie = results[Math.floor(Math.random() * results.length)];
+        movie = randomMovie;
+        console.log(movie)
     } while (randomMovie.poster_path == null);
     const imgUrl = `https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`;
     //Obtención de los géneros de la película
@@ -97,3 +100,32 @@ const sinopsisFullShow = () => {
 
 btnLike.addEventListener('click',fetchMovie);
 btnDisLike.addEventListener('click',fetchMovie);
+
+//Configuracion para trackear la actividad de la app
+const likesCollection = database.collection('likes');
+const dislikesCollection = database.collection('dislikes');
+
+function getUserId(){
+    const user = auth.currentUser;
+    const loggedInUserId = user.uid;
+    return loggedInUserId;
+}
+
+//Log de acciones en los botones de like o dislike
+btnLike.addEventListener("click", function() {
+    likesCollection.add({
+        movieId: movie.id,
+        userId: getUserId()
+    }).catch(err => {
+        console.log(err.message);
+    })
+})
+
+btnDisLike.addEventListener("click", function() {
+    dislikesCollection.add({
+        movieId: movie.id,
+        userId: getUserId()
+    }).catch(err => {
+        console.log(err.message);
+    })
+})

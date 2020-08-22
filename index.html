@@ -1,220 +1,214 @@
 <!doctype html>
 <html lang="es">
+    <head>
+        <title>Recomenda2</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <!--Custom CSS-->
+        <link rel="stylesheet" href="style/style.css">
+    </head>
 
-<head>
-    <title>Recomenda2</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400;1,500&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <!--Custom CSS-->
-    <link rel="stylesheet" href="style/style.css">
-</head>
+    <body>
+        <!--Nav Bar *****-->
+        <div class="container">
+            <nav class="navbar navbar-expand navbar-dark bg-transparent">
+                <a class="navbar-brand d-none d-md-block" href="#">Nav Bar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
 
-<body>
-    <!--Nav Bar *****-->
-    <div class="container">
-        <nav class="navbar navbar-expand navbar-dark bg-transparent">
-            <a class="navbar-brand d-none d-md-block" href="#">Nav Bar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarsExample02">
+                    <form class="form-inline">
+                        <button type="button" id="btn-main-login" class="btn btn-sm btn-outline-success mr-2" data-toggle="modal"
+                            data-target="#loginModal">
+                            Iniciar Sesion
+                        </button>
+                        <span id="display-username" class="navbar-text lead text-white mr-3  d-none">
+                          </span>
+                        <button type="button" id="btn-logout" class="btn btn-sm btn-outline-warning d-none">Salir</button>
+                    </form>
+                </div>
+              </nav>
+        </div>
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarsExample02">
-                <form class="form-inline">
-                    <button type="button" id="btn-main-login" class="btn btn-sm btn-outline-success mr-2" data-toggle="modal"
-                        data-target="#loginModal">
-                        Iniciar Sesion
-                    </button>
-                    <span id="display-username" class="navbar-text lead text-white mr-3  d-none">
-                      </span>
-                    <button type="button" id="btn-logout" class="btn btn-sm btn-outline-warning d-none">Salir</button>
-                </form>
-            </div>
-          </nav>
-    </div>
+        <div class="contenedor">
+            <main class="justify-content-center">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Recomenda 2</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 justify-content-center text-center">
+                        <p class="lead">No sabes que ver ??</p>
+                        <button type="button" id="btn-main" class="btn btn-lg btn-main" data-toggle="modal"
+                            data-target="#modelId" onclick="fetchMovie()">
+                            Recomenda2 !
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- Button trigger modal -->
 
-    <div class="contenedor">
-        <main class="justify-content-center">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Recomenda 2</h2>
+        <!-- Modal -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" id="modalHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 text-left">
+                                    <h3 id="titulo-card">Titulo Pelicula</h3>
+                                    <p id="titulo-original">Titulo Original</p>
+                                    <p id="genero"></p>
+                                    <p id="sinopsis" class="m-0 sinopsis">Sinopsis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-around likes">
+                        <button id="btn-like" type="button" class="btn btn-lg"><i class="fa fa-thumbs-up"
+                                aria-hidden="true"></i></button>
+
+                        <button id="btn-dislike" type="button" class="btn btn-lg">
+                            <i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div> -->
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 justify-content-center text-center">
-                    <p class="lead">No sabes que ver ??</p>
-                    <button type="button" id="btn-main" class="btn btn-lg btn-main" data-toggle="modal"
-                        data-target="#modelId" onclick="fetchMovie()">
-                        Recomenda2 !
-                    </button>
-                </div>
-            </div>
-        </main>
-    </div>
-    <!-- Button trigger modal -->
+        </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" id="modalHeader">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
+        <!-- Modal Login -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modal-form">
+                    <div class="modal-header text-center" id="modalLoginHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
                         <div class="row">
-                            <div class="col-12 text-left">
-                                <h3 id="titulo-card">Titulo Pelicula</h3>
-                                <p id="titulo-original">Titulo Original</p>
-                                <p id="genero"></p>
-                                <p id="sinopsis" class="m-0 sinopsis">Sinopsis</p>
+                            <div class="col text-center">
+                                <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel">
+                                    <strong id="modal-title-login">INICIAR SESION</strong>
+                                    <strong id="modal-title-registro" class="d-none">REGISTRATE</strong></h3>
+                                <p id="modal-description-login">Accede con tu cuenta y disfruta una experiencia
+                                    personalizada.</p>
+                                <p id="modal-description-registro" class="d-none">Crea tu cuenta y disfruta una experiencia
+                                    personalizada.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-around likes">
-                    <button id="btn-like" type="button" class="btn btn-lg"><i class="fa fa-thumbs-up"
-                            aria-hidden="true"></i></button>
-
-                    <button id="btn-dislike" type="button" class="btn btn-lg">
-                        <i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
-                </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div> -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Login -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content modal-form">
-                <div class="modal-header text-center" id="modalLoginHeader">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col text-center">
-                            <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel">
-                                <strong id="modal-title-login">INICIAR SESION</strong>
-                                <strong id="modal-title-registro" class="d-none">REGISTRATE</strong></h3>
-                            <p id="modal-description-login">Accede con tu cuenta y disfruta una experiencia
-                                personalizada.</p>
-                            <p id="modal-description-registro" class="d-none">Crea tu cuenta y disfruta una experiencia
-                                personalizada.</p>
-                        </div>
-                    </div>
-                    <form id="form-login">
-                        <div class="md-form mb-2">
-                            <label data-error="wrong" data-success="right" for="email-input">Email</label>
-                            <input type="email" id="email-login" required autocomplete='email' class="form-control bg-dark text-white">
-                        </div>
-                        <div class="md-form">
-                            <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
-                            <input type="password" id="pass-login" required autocomplete='current-password' class="form-control bg-dark text-white">
-                        </div>
-                        <div class="row d-flex align-items-center">
-                            <!--Grid column-->
-                            <div class="text-center mb-3 col-md-12">
-                                <button type="submit" id="btn-login" class="btn btn-main">Ingresar</button>
-                            </div>
-                            <!--Grid column-->
-                        </div>
-
-                    </form>
-
-                    <form id="form-registro" class="d-none">
-                        <div id="user-input" class="d-none">
+                        <form id="form-login">
                             <div class="md-form mb-2">
-                                <label data-error="wrong" data-success="right" for="displayName-input">Nombre</label>
-                                <input type="text" id="displayName-input" required autocomplete="username" class="form-control bg-dark text-white">
+                                <label data-error="wrong" data-success="right" for="email-input">Email</label>
+                                <input type="email" id="email-login" required autocomplete='email' class="form-control bg-dark text-white">
                             </div>
-                        </div>
-                        <div class="md-form mb-2">
-                            <label data-error="wrong" data-success="right" for="email-input">Email</label>
-                            <input type="email" id="email-sign-up" required autocomplete='email' class="form-control bg-dark text-white">
-                        </div>
-                        <div class="md-form">
-                            <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
-                            <input type="password" id="pass-sign-up" required autocomplete='current-password' class="form-control bg-dark text-white">
-                        </div>
-                        <div class="row d-flex align-items-center">
-                            <!--Grid column-->
-                            <div class="text-center mb-3 col-md-12">
-                                <button type="submit" id="btn-reg-usuario" class="btn btn-main">Comenza la
-                                    experiencia</button>
+                            <div class="md-form">
+                                <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
+                                <input type="password" id="pass-login" required autocomplete='current-password' class="form-control bg-dark text-white">
                             </div>
-                            <!--Grid column-->
-                        </div>
+                            <div class="row d-flex align-items-center">
+                                <!--Grid column-->
+                                <div class="text-center mb-3 col-md-12">
+                                    <button type="submit" id="btn-login" class="btn btn-main">Ingresar</button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
 
-                    </form>
+                        </form>
 
-                    <div id="ui-SignUp" class="row">
-                        <div class="col-12 text-right">
-                            <p class="small p-0 m-0 ">Forma parte de la comunidad</p>
-                            <button type="button" id="btn-acceso-reg"
-                                class="btn btn-main btn-registro">Registrate</button>
+                        <form id="form-registro" class="d-none">
+                            <div id="user-input" class="d-none">
+                                <div class="md-form mb-2">
+                                    <label data-error="wrong" data-success="right" for="displayName-input">Nombre</label>
+                                    <input type="text" id="displayName-input" required autocomplete="username" class="form-control bg-dark text-white">
+                                </div>
+                            </div>
+                            <div class="md-form mb-2">
+                                <label data-error="wrong" data-success="right" for="email-input">Email</label>
+                                <input type="email" id="email-sign-up" required autocomplete='email' class="form-control bg-dark text-white">
+                            </div>
+                            <div class="md-form">
+                                <label data-error="wrong" data-success="right" for="pass-input">Contraseña</label>
+                                <input type="password" id="pass-sign-up" required autocomplete='current-password' class="form-control bg-dark text-white">
+                            </div>
+                            <div class="row d-flex align-items-center">
+                                <!--Grid column-->
+                                <div class="text-center mb-3 col-md-12">
+                                    <button type="submit" id="btn-reg-usuario" class="btn btn-main">Comenza la
+                                        experiencia</button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+
+                        </form>
+
+                        <div id="ui-SignUp" class="row">
+                            <div class="col-12 text-right">
+                                <p class="small p-0 m-0 ">Forma parte de la comunidad</p>
+                                <button type="button" id="btn-acceso-reg"
+                                    class="btn btn-main btn-registro">Registrate</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--Fin modal Login-->
+        <!--Fin modal Login-->
 
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
-    <script>
-            var firebaseConfig = {
-            apiKey: "AIzaSyBR72PdC_F2NJDy9EwHdUMz-2Ni--AHLE8",
-            authDomain: "dev-r2-5c2d1.firebaseapp.com",
-            databaseURL: "https://dev-r2-5c2d1.firebaseio.com",
-            projectId: "dev-r2-5c2d1",
-            storageBucket: "dev-r2-5c2d1.appspot.com",
-            messagingSenderId: "571673184403",
-            appId: "1:571673184403:web:6b824533633b4f6dbda566"
-            };
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+        <script>
+                var firebaseConfig = {
+                apiKey: "AIzaSyBR72PdC_F2NJDy9EwHdUMz-2Ni--AHLE8",
+                authDomain: "dev-r2-5c2d1.firebaseapp.com",
+                databaseURL: "https://dev-r2-5c2d1.firebaseio.com",
+                projectId: "dev-r2-5c2d1",
+                storageBucket: "dev-r2-5c2d1.appspot.com",
+                messagingSenderId: "571673184403",
+                appId: "1:571673184403:web:6b824533633b4f6dbda566"
+                };
 
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-           
-            // referencia auth y firestore
-            const auth = firebase.auth();
-            const database = firebase.firestore();
-    </script>
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+            
+                // referencia auth y firestore
+                const auth = firebase.auth();
+                const database = firebase.firestore();
+        </script>
 
-
-
-    <script type="module" src="js/auth.js"></script>
-    <script type="module" src="js/db.js"></script>
-    <script src="js/app.js"></script>
-    <script type="module" src="js/ui-login.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-
-</body>
-
+        <script type="module" src="js/auth.js"></script>
+        <script src="js/app.js"></script>
+        <script type="module" src="js/ui-login.js"></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    </body>
 </html>
