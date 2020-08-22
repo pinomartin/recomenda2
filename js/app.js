@@ -29,7 +29,6 @@ const fetchMovie =  async () => {
         //Obtiene una película random del array de resultados
         randomMovie = results[Math.floor(Math.random() * results.length)];
         movie = randomMovie;
-        console.log(movie)
     } while (randomMovie.poster_path == null);
     const imgUrl = `https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`;
     const original_lang = randomMovie.original_language;
@@ -102,34 +101,48 @@ const sinopsisFullShow = () => {
 /** -------------Event Listeners */
 
 btnMain.addEventListener('click',fetchMovie);
-btnLike.addEventListener('click',fetchMovie);
-btnDisLike.addEventListener('click',fetchMovie);
 
 //Configuracion para trackear la actividad de la app
 const likesCollection = database.collection('likes');
 const dislikesCollection = database.collection('dislikes');
 
 function getUserId(){
-    const user = auth.currentUser;
-    const loggedInUserId = user.uid;
-    return loggedInUserId;
+    if (auth.currentUser) {
+        const user = auth.currentUser;
+        const loggedInUserId = user.uid;
+        return loggedInUserId;
+    } else {
+        return null;
+    }    
 }
 
 //Log de acciones en los botones de like o dislike
 btnLike.addEventListener("click", function() {
-    likesCollection.add({
-        movieId: movie.id,
-        userId: getUserId()
-    }).catch(err => {
-        console.log(err.message);
-    })
+    if (getUserId()) {
+        likesCollection.add({
+            movieId: movie.id,
+            userId: getUserId()
+        }).then(() => {
+            fetchMovie();
+        }).catch(err => {
+            console.log(err.message);
+        })
+    } else {
+        fetchMovie();
+    }
 })
 
 btnDisLike.addEventListener("click", function() {
-    dislikesCollection.add({
-        movieId: movie.id,
-        userId: getUserId()
-    }).catch(err => {
-        console.log(err.message);
-    })
+    if (getUserId()) {
+        dislikesCollection.add({
+            movieId: movie.id,
+            userId: getUserId()
+        }).then(() => {
+            fetchMovie();
+        }).catch(err => {
+            console.log(err.message);
+        })
+    } else {
+        fetchMovie();
+    }
 })
